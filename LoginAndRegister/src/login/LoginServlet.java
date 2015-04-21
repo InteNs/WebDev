@@ -19,7 +19,7 @@ public class LoginServlet extends HttpServlet {
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
 		if(email.equals(correctEmail)&& password.equals(correctPass))succes = true;
-		req.setAttribute("succes",succes);
+		req.setAttribute("succes",true);
 		RequestDispatcher rd = null;
 		rd = req.getRequestDispatcher("LoginServlet.do");
 		rd.forward(req, resp);		

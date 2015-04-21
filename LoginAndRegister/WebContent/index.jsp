@@ -45,8 +45,8 @@
             
             </form>
        		<%
-				Object msgs = request.getAttribute("msgs");
-				if (msgs != null) {
+				Object msgs = request.getAttribute("succes");
+				if (msgs != false) {
 					out.println("<div class=\"alert alert-danger\" role=\"alert\">JE FAALT MET INLOGGEN BIAATCH</div>");
 				}			 
 			%>       
