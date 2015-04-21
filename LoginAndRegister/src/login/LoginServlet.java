@@ -18,11 +18,20 @@ public class LoginServlet extends HttpServlet {
 		boolean succes = false;
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
-		if(email.equals(correctEmail)&& password.equals(correctPass))succes = true;
-		req.setAttribute("succes",true);
+		if(!email.equals(correctEmail)&& !password.equals(correctPass)){
+			req.setAttribute("succes","<div class=\"alert alert-danger\" role=\"alert\" style=\"margin-top:20px;\">Verkeerd emailadres en/of wachtwoord.</div>");
+			succes = false;
+		}
+		else {
+			req.setAttribute("succes","<div class=\"alert alert-success\" role=\"alert\" style=\"margin-top:20px;\">Login succesvol.</div>");
+			succes = true;
+		}
 		RequestDispatcher rd = null;
-		rd = req.getRequestDispatcher("LoginServlet.do");
-		rd.forward(req, resp);		
+		
+//		if (succes) rd = req.getRequestDispatcher("LoginServlet.do");
+//		else die andere rd
+		rd = req.getRequestDispatcher("index.jsp");
+		rd.forward(req, resp);	
 	}
 
 }
