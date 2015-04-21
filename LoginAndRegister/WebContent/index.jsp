@@ -9,6 +9,7 @@
 
   <!-- Bootstrap -->
   <link href="bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
+   <link href="registration.css" rel="stylesheet">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -82,11 +83,11 @@
 
               <div class="form-group">
                 <label for="exampleInputPassword1">Emailadres</label>
-                <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Vul email in">
+                <input type="email" name="emailreg" class="form-control" id="emailreg" placeholder="Vul email in">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Herhaal emailadres</label>
-                <input type="email" name="emailreg" class="form-control" id="exampleInputPassword1" placeholder="Herhaal email">
+                <input type="email" name="emailrep" onkeyup="verify()" class="form-control" id="emailrep" placeholder="Herhaal email">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Wachtwoord</label>
@@ -172,4 +173,21 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
   </body>
+  <script type="text/javascript">
+    var org;
+    var rep
+    function verify() { 
+    	
+        org = document.getElementById('emailreg').value;
+        rep = document.getElementById('emailrep').value;
+
+        if (org===rep){
+        	document.getElementById('emailreg').className ="form-control";
+            document.getElementById('emailrep').className ="form-control";
+            } else {
+            document.getElementById('emailreg').className += " falseInput";
+            document.getElementById('emailrep').className += " falseInput";
+            }
+    }
+</script>
   </html>

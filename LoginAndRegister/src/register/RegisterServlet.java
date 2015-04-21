@@ -17,6 +17,8 @@ public class RegisterServlet extends HttpServlet {
 		String sirName = req.getParameter("sirname");
 		String address = req.getParameter("address");
 		String country = req.getParameter("country"); 
+		boolean succes = false;
+		
 		// User user = new User(email,password,username,firstname,sirname,address,country);
 		
 	}
