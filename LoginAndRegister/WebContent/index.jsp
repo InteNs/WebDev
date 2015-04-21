@@ -28,14 +28,14 @@
            <!-- Inloggen -->
            <p>Aanmelden:</p>
 
-           <form>
+           <form action="LoginServlet.do" method="post">
             <div class="form-group">
               <label for="exampleInputEmail1">Email</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Vul email in">
+              <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Vul email in">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Wachtwoord</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Vul wachtwoord in">
+              <input type="password" name='password' class="form-control" id="exampleInputPassword1" placeholder="Vul wachtwoord in">
             </div>
             <button type="submit" class="btn pull-right" style="width:120px; background-color:#0099CC; color:#FFFFFF;">Aanmelden</button>
             
@@ -44,7 +44,12 @@
               </label>
             
             </form>
-          
+       		<%
+				Object msgs = request.getAttribute("msgs");
+				if (msgs != null) {
+					out.println("<div class=\"alert alert-danger\" role=\"alert\">JE FAALT MET INLOGGEN BIAATCH</div>");
+				}			 
+			%>       
             <span>&nbsp;</span>
           <!-- Registreren -->
           <p>Registreren:</p>

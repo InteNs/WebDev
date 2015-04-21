@@ -16,11 +16,12 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost( HttpServletRequest req, HttpServletResponse resp)
 			 throws ServletException, IOException {
 		boolean succes = false;
-		String email = req.getParameter("");
-		String password = req.getParameter("");
+		String email = req.getParameter("email");
+		String password = req.getParameter("password");
 		if(email.equals(correctEmail)&& password.equals(correctPass))succes = true;
 		req.setAttribute("succes",succes);
 		RequestDispatcher rd = null;
+		rd = req.getRequestDispatcher("LoginServlet.do");
 		rd.forward(req, resp);		
 	}
 
