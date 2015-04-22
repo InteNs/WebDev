@@ -9,7 +9,7 @@
 
   <!-- Bootstrap -->
   <link href="bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
-   <link href="registration.css" rel="stylesheet">
+  <link href="registration.css" rel="stylesheet">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -87,7 +87,7 @@
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Herhaal emailadres</label>
-                <input type="email" name="emailrep" onkeyup="verifyemail()" class="form-control" id="emailrep" placeholder="Herhaal email">
+                <input type="email" name="emailrep" onkeyup='verifyReg("emailrep", "emailreg")' class="form-control" id="emailrep" placeholder="Herhaal email">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Wachtwoord</label>
@@ -95,7 +95,7 @@
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Herhaal wachtwoord</label>
-                <input type="password" name="passwordrep" onkeyup="verifypass()" class="form-control" id="passwordrep" placeholder="Herhaal wachtwoord">
+                <input type="password" name="passwordrep" onkeyup='verifyReg("passwordrep", "passwordreg")' class="form-control" id="passwordrep" placeholder="Herhaal wachtwoord">
               </div>
 
             </form>
@@ -179,38 +179,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+    <script src="registration.js"></script>
   </body>
-  <script type="text/javascript">
-    var org;
-    var rep
-    function melding(){
-    	alert("melding");
-    }
-    function verifyemail() { 
-    	
-        org = document.getElementById('emailreg').value;
-        rep = document.getElementById('emailrep').value;
-		
-        if (org===rep){
-        	document.getElementById('emailreg').className ="form-control";
-            document.getElementById('emailrep').className ="form-control";
-            } else {
-            document.getElementById('emailreg').className += " falseInput";
-            document.getElementById('emailrep').className += " falseInput";
-            }
-    }
-    function verifypass() { 
-    	
-        org = document.getElementById('passwordreg').value;
-        rep = document.getElementById('passwordrep').value;
-		
-        if (org===rep){
-        	document.getElementById('passwordreg').className ="form-control";
-            document.getElementById('passwordrep').className ="form-control";
-            } else {
-            document.getElementById('passwordreg').className += " falseInput";
-            document.getElementById('passwordrep').className += " falseInput";
-            }
-    }
-</script>
   </html>
