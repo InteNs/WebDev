@@ -38,7 +38,7 @@
               <label for="exampleInputPassword1">Wachtwoord</label>
               <input type="password" name='password' class="form-control" id="exampleInputPassword1" placeholder="Vul wachtwoord in">
             </div>
-            <button type="submit" class="btn pull-right" style="width:120px; background-color:#0099CC; color:#FFFFFF;">Aanmelden</button>
+            <button type="submit" class="btn pull-right" style="background-color:#0099CC; color:#FFFFFF;">Aanmelden</button>
             
               <label>
                 <input type="checkbox"> <span style="font-weight: 200;">Blijf aangemeld</span>
@@ -60,7 +60,7 @@
               <label for="exampleInputEmail1">Email</label>
               <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Vul email in">
             </div>
-            <button type="button" class="btn pull-right"  data-toggle="modal" data-target="#myModal" style="width:120px; background-color:#0099CC; color:#FFFFFF;">Registreren</button>
+            <button type="button" class="btn pull-right"  data-toggle="modal" data-target="#myModal" style="background-color:#0099CC; color:#FFFFFF;">Registreren</button>
             </form>
           
         </div>
