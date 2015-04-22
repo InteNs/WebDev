@@ -87,15 +87,15 @@
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Herhaal emailadres</label>
-                <input type="email" name="emailrep" onkeyup="verify()" class="form-control" id="emailrep" placeholder="Herhaal email">
+                <input type="email" name="emailrep" onkeyup="verifyemail()" class="form-control" id="emailrep" placeholder="Herhaal email">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Wachtwoord</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Vul wachtwoord in">
+                <input type="password" name="passwordreg" class="form-control" id="passwordreg" placeholder="Vul wachtwoord in">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Herhaal wachtwoord</label>
-                <input type="password" name="passwordreg" class="form-control" id="exampleInputPassword1" placeholder="Herhaal wachtwoord">
+                <input type="password" name="passwordrep" onkeyup="verifypass()" class="form-control" id="passwordrep" placeholder="Herhaal wachtwoord">
               </div>
 
             </form>
@@ -118,7 +118,7 @@
           </div>
           <div class="modal-body">
 
-            <form style="padding: 10px 10px 10px 10px;">
+            <form action="RegisterServlet.do" method="post" style="padding: 10px 10px 10px 10px;">
 
               <div class="form-group">
                 <label for="exampleInputPassword1">Gebruikersnaam</label>
@@ -142,6 +142,15 @@
               </div>
 
             </form>
+            <%
+				String msg = request.getParameter("msg");
+				if(msg=="succes"){
+					out.println("<script>melding();</script>");
+				}
+				else{%>
+				
+				<%}
+			%>
           </div>
           <div class="modal-footer" style="background-color: #E2E2E2; border-radius: 0px 0px 8px 8px;">
             <button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#myModal">Vorige</button>
@@ -176,17 +185,33 @@
   <script type="text/javascript">
     var org;
     var rep
-    function verify() { 
+    function melding(){
+    	alert("melding");
+    }
+    function verifyemail() { 
     	
         org = document.getElementById('emailreg').value;
         rep = document.getElementById('emailrep').value;
-
+		
         if (org===rep){
         	document.getElementById('emailreg').className ="form-control";
             document.getElementById('emailrep').className ="form-control";
             } else {
             document.getElementById('emailreg').className += " falseInput";
             document.getElementById('emailrep').className += " falseInput";
+            }
+    }
+    function verifypass() { 
+    	
+        org = document.getElementById('passwordreg').value;
+        rep = document.getElementById('passwordrep').value;
+		
+        if (org===rep){
+        	document.getElementById('passwordreg').className ="form-control";
+            document.getElementById('passwordrep').className ="form-control";
+            } else {
+            document.getElementById('passwordreg').className += " falseInput";
+            document.getElementById('passwordrep').className += " falseInput";
             }
     }
 </script>

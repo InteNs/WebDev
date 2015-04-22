@@ -1,5 +1,7 @@
 package register;
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,9 +19,22 @@ public class RegisterServlet extends HttpServlet {
 		String sirName = req.getParameter("surname");
 		String address = req.getParameter("address");
 		String country = req.getParameter("country"); 
-		boolean succes = false;
-		
 		// User user = new User(email,password,username,firstname,sirname,address,country);
+		RequestDispatcher rd = null;
+		if(		email!=null
+				&& password !=null
+				&& userName !=null
+				&& firstName !=null
+				&& sirName != null
+				&& address != null
+				&& country != null){
+			req.setAttribute("msg","succes");
+		}
+		else{
+			req.setAttribute("msg","fail");
+		}
+		rd = req.getRequestDispatcher("index.jsp");
+		rd.forward(req, resp);
 		
 	}
 }
