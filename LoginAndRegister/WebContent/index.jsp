@@ -142,15 +142,7 @@
               </div>
 
             </form>
-            <%
-				String msg = request.getParameter("msg");
-				if(msg=="succes"){
-					out.println("<script>melding();</script>");
-				}
-				else{%>
-				
-				<%}
-			%>
+            
           </div>
           <div class="modal-footer" style="background-color: #E2E2E2; border-radius: 0px 0px 8px 8px;">
             <button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#myModal">Vorige</button>
@@ -171,6 +163,12 @@
           <div class="modal-body">
             <p>Bedankt voor uw registratie.</p>
           </div>
+          <%
+				String msg = request.getParameter("succes");
+				if(msg != null){
+					out.println(msg);
+				}
+			%>
           <div class="modal-footer" style="background-color: #E2E2E2; border-radius: 0px 0px 8px 8px;">
             <button type="button" class="btn btn-primary" data-dismiss="modal">Terug naar aanmelden</button>
           </div>

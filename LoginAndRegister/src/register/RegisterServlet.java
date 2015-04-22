@@ -22,16 +22,16 @@ public class RegisterServlet extends HttpServlet {
 		// User user = new User(email,password,username,firstname,sirname,address,country);
 		RequestDispatcher rd = null;
 		if(		email!=null
-				&& password !=null
-				&& userName !=null
-				&& firstName !=null
-				&& sirName != null
-				&& address != null
-				&& country != null){
-			req.setAttribute("msg","succes");
+				&& password  != null
+				&& userName  != null
+				&& firstName != null
+				&& sirName   != null
+				&& address   != null
+				&& country   != null){
+			req.setAttribute("succes","<div class=\"alert alert-success\" role=\"alert\" style=\"margin-top:20px;\">Login succesvol.</div>");
 		}
 		else{
-			req.setAttribute("msg","fail");
+			req.setAttribute("succes","<div class=\"alert alert-danger\" role=\"alert\" style=\"margin-top:20px;\">Verkeerd emailadres en/of wachtwoord.</div>");
 		}
 		rd = req.getRequestDispatcher("index.jsp");
 		rd.forward(req, resp);
