@@ -83,19 +83,19 @@
 
               <div class="form-group">
                 <label for="exampleInputPassword1">Emailadres</label>
-                <input type="email" name="emailreg" class="form-control" id="emailreg" placeholder="Vul email in">
+                <input type="email" name="emailreg" onmouseleave='verifyReg("emailrep", "emailreg")' onchange='verifyReg("emailrep", "emailreg")'class="form-control" id="emailreg" placeholder="Vul email in">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Herhaal emailadres</label>
-                <input type="email" name="emailrep" onkeyup='verifyReg("emailrep", "emailreg")' class="form-control" id="emailrep" placeholder="Herhaal email">
+                <input type="email" name="emailrep" onmouseleave='verifyReg("emailrep", "emailreg")' onchange='verifyReg("emailrep", "emailreg")' class="form-control" id="emailrep" placeholder="Herhaal email">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Wachtwoord</label>
-                <input type="password" name="passwordreg" class="form-control" id="passwordreg" placeholder="Vul wachtwoord in">
+                <input type="password" name="passwordreg" onmouseleave='verifyReg("passwordrep", "passwordreg")' onchange='verifyReg("passwordrep", "passwordreg")' class="form-control" id="passwordreg" placeholder="Vul wachtwoord in">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Herhaal wachtwoord</label>
-                <input type="password" name="passwordrep" onkeyup='verifyReg("passwordrep", "passwordreg")' class="form-control" id="passwordrep" placeholder="Herhaal wachtwoord">
+                <input type="password" name="passwordrep" onmouseleave='verifyReg("passwordrep", "passwordreg")' onchange='verifyReg("passwordrep", "passwordreg")' class="form-control" id="passwordrep" placeholder="Herhaal wachtwoord">
               </div>
 
             </form>
