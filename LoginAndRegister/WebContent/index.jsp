@@ -53,15 +53,13 @@
 			%>       
             <span>&nbsp;</span>
           <!-- Registreren -->
-          <p>Registreren:</p>
-
-           <form>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Vul email in">
-            </div>
+          <p>Registreren:
+          <form>
             <button type="button" class="btn pull-right"  data-toggle="modal" data-target="#myModal" style="background-color:#0099CC; color:#FFFFFF;">Registreren</button>
             </form>
+          </p>
+
+           
           
         </div>
       </div></div>
@@ -75,7 +73,7 @@
         <div class="modal-content" style="border: 1px solid #0099CC; border-radius: 8px;">
           <div class="modal-header" style="background-color: #E2E2E2; border-radius: 8px 8px 0px 0px;">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Registratie deel 1</h4>
+            <h4 class="modal-title">Registratie</h4>
           </div>
           <div class="modal-body">
 
@@ -83,46 +81,19 @@
 
               <div class="form-group">
                 <label for="exampleInputPassword1">Emailadres</label>
-                <input type="email" name="emailreg" onmouseleave='verifyReg("emailrep", "emailreg")' onchange='verifyReg("emailrep", "emailreg")'class="form-control" id="emailreg" placeholder="Vul email in">
+                <input type="email" name="emailreg" onblur='verifyReg("emailrep", "emailreg")'class="form-control" id="emailreg" placeholder="Vul email in">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Herhaal emailadres</label>
-                <input type="email" name="emailrep" onmouseleave='verifyReg("emailrep", "emailreg")' onchange='verifyReg("emailrep", "emailreg")' class="form-control" id="emailrep" placeholder="Herhaal email">
+                <input type="email" name="emailrep" onblur='verifyReg("emailrep", "emailreg")' class="form-control" id="emailrep" placeholder="Herhaal email">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Wachtwoord</label>
-                <input type="password" name="passwordreg" onmouseleave='verifyReg("passwordrep", "passwordreg")' onchange='verifyReg("passwordrep", "passwordreg")' class="form-control" id="passwordreg" placeholder="Vul wachtwoord in">
+                <input type="password" name="passwordreg" onblur='verifyReg("passwordrep", "passwordreg")' class="form-control" id="passwordreg" placeholder="Vul wachtwoord in">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Herhaal wachtwoord</label>
-                <input type="password" name="passwordrep" onmouseleave='verifyReg("passwordrep", "passwordreg")' onchange='verifyReg("passwordrep", "passwordreg")' class="form-control" id="passwordrep" placeholder="Herhaal wachtwoord">
-              </div>
-
-            </form>
-          </div>
-          <div class="modal-footer" style="background-color: #E2E2E2; border-radius: 0px 0px 8px 8px;">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
-            <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#myModal2" >Stap 2</button>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <!-- Modal Registration part 2 -->
-    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content" style="border: 1px solid #0099CC; border-radius: 8px;">
-          <div class="modal-header" style="background-color: #E2E2E2; border-radius: 8px 8px 0px 0px;">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Registratie deel 2</h4>
-          </div>
-          <div class="modal-body">
-
-            <form action="RegisterServlet.do" method="post" style="padding: 10px 10px 10px 10px;">
-
-              <div class="form-group">
-                <label for="exampleInputPassword1">Gebruikersnaam</label>
-                <input type="email" name="username" class="form-control" id="exampleInputPassword1" placeholder="Vul gebruikersnaam in">
+                <input type="password" name="passwordrep" onblur='verifyReg("passwordrep", "passwordreg")' class="form-control" id="passwordrep" placeholder="Herhaal wachtwoord">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Voornaam</label>
@@ -142,10 +113,9 @@
               </div>
 
             </form>
-            
           </div>
           <div class="modal-footer" style="background-color: #E2E2E2; border-radius: 0px 0px 8px 8px;">
-            <button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#myModal">Vorige</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#myModal3">Registreren</button>
           </div>
         </div><!-- /.modal-content -->

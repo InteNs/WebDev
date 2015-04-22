@@ -14,18 +14,16 @@ public class RegisterServlet extends HttpServlet {
 			 throws ServletException, IOException {
 		String email = req.getParameter("emailreg");
 		String password = req.getParameter("passwordreg");
-		String userName = req.getParameter("username");
 		String firstName = req.getParameter("name");
-		String sirName = req.getParameter("surname");
+		String surName = req.getParameter("surname");
 		String address = req.getParameter("address");
 		String country = req.getParameter("country"); 
-		// User user = new User(email,password,username,firstname,sirname,address,country);
+		// User user = new User(email,password,username,firstname,surName,address,country);
 		RequestDispatcher rd = null;
 		if(		email!=null
 				&& password  != null
-				&& userName  != null
 				&& firstName != null
-				&& sirName   != null
+				&& surName   != null
 				&& address   != null
 				&& country   != null){
 			req.setAttribute("succes","<div class=\"alert alert-success\" role=\"alert\" style=\"margin-top:20px;\">Login succesvol.</div>");
