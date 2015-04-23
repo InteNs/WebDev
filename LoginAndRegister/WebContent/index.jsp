@@ -20,16 +20,15 @@
 </head>
 <body>
 	<div class="container" style="margin-top: 50px;">
-		<div class="jumbotron">
 			
 
 			<div class="row">
 				<div class="col-md-4"></div>
 				<div class="col-md-4"
-					style="background-color: rgba(238,238,238,0.5); border: 1px solid #0099CC; border-opacity: 0.2; border-radius: 8px; padding: 15px 15px 15px 15px;">
+					style="background-color: rgba(238,238,238,0.8); border: 1px solid #0099CC; border-opacity: 0.2; border-radius: 0px; padding: 15px 15px 15px 15px;">
 					<h1 style="text-align: center; color: #0099CC; margin-bottom: 20px; font-size:32px;">AutoTotaalDienst</h1>
 					<!-- Inloggen -->
-					<p>Aanmelden:</p>
+					<h4 class="modal-title">Aanmelden:</h4>
 
 					<form action="LoginServlet.do" method="post">
 						<div class="form-group">
@@ -72,7 +71,6 @@
 					<span>&nbsp;</span>
 
 				</div>
-			</div>
 		</div>
 
 		<div class="col-md-4"></div>
@@ -83,24 +81,24 @@
 		aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content"
-				style="border: 1px solid #0099CC; border-radius: 8px; background-color: rgba(238,238,238,0.8);">
+				style="border: 1px solid #0099CC; border-radius: 0px; background-color: rgba(238,238,238,0.9);">
 
 
 				<div class="modal-body">
 					<h4 class="modal-title">Registratie</h4>
-					<form action="RegisterServlet.do" method="post">
+					<form action="RegisterServlet.do" method="post" onsubmit="return validateElements();" action="#">
 						<div class="row">
 							<div class="col-md-6">
 							<div class="form-group">
 								<label for="emailreg">Emailadres</label> <input type="email"
-									name="emailreg" onblur='compareInput("emailreg", "emailrep");' 
+									name="emailreg" onblur='validateElement("emailreg");' 
 									class="form-control" id="emailreg" placeholder="Vul email in">
                   <span id="emailRegErr"></span>
 							</div>
 							<div class="form-group">
 								<label for="emailrep">Herhaal emailadres</label> <input
 									type="email" name="emailrep"
-									class="form-control" onblur='compareInput("emailrep", "emailreg");' 
+									class="form-control" onblur='validateElement("emailrep");' 
 									id="emailrep" placeholder="Herhaal email">
                   <span id="emailRepErr"></span>
 							</div>
@@ -149,9 +147,7 @@
 						<div class="row" style="margin-left:16px;">
 						<div class="btn-toolbar" role="toolbar" aria-label="label">
 						<button type="button" class="btn" data-dismiss="modal" style="border-color: #0099CC;background-color: #FFF;  color: #626262;">Annuleren</button>
-						<button type="submit" class="btn" value="submit request" 
-            onsubmit='
-              return validateInput("emailreg", "emailrep", "passwordreg", "passwordrep", "surname", "lastname", "address", "country");'
+						<button type="button" class="btn" value="submit"
 								id="buttonReg" style="background-color: #0099CC; color: #FFF;">Registreren</button>
 						</div>
 					</div>
