@@ -92,26 +92,26 @@
 
 							<div class="form-group">
 								<label for="emailreg">Emailadres</label> <input type="email"
-									name="emailreg" onblur='verifyReg("emailrep", "emailreg")'
+									name="emailreg" onblur='compareInput("emailreg", "emailrep")'
 									class="form-control" id="emailreg" placeholder="Vul email in">
 							</div>
 							<div class="form-group">
 								<label for="emailrep">Herhaal emailadres</label> <input
 									type="email" name="emailrep"
-									onblur='verifyReg("emailrep", "emailreg")' class="form-control"
+									onblur='compareInput("emailrep", "emailreg")' class="form-control"
 									id="emailrep" placeholder="Herhaal email">
 							</div>
 							<div class="form-group">
 								<label for="passwordreg">Wachtwoord</label> <input
 									type="password" name="passwordreg"
-									onblur='verifyReg("passwordrep", "passwordreg")'
+									onblur='compareInput("passwordreg", "passwordrep")'
 									class="form-control" id="passwordreg"
 									placeholder="Vul wachtwoord in">
 							</div>
 							<div class="form-group">
 								<label for="passwordrep">Herhaal wachtwoord</label> <input
 									type="password" name="passwordrep"
-									onblur='verifyReg("passwordrep", "passwordreg")'
+									onblur='compareInput("passwordrep", "passwordreg")'
 									class="form-control" id="passwordrep"
 									placeholder="Herhaal wachtwoord">
 							</div>

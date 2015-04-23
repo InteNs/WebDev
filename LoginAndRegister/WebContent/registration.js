@@ -1,12 +1,11 @@
-    function verifyReg(registration, repeatRegistration) { 
-        var original = document.getElementById(registration).value;
-        var repeat = document.getElementById(repeatRegistration).value;
+    function compareInput(field, compare) { 
+        var first = document.getElementById(field).value;
+        var second = document.getElementById(compare).value;
 
-        if (original===repeat||repeat==null){
-        	document.getElementById(registration).className = "form-control";
-            document.getElementById(repeatRegistration).className = "form-control";
+        if (first===second||second==null){
+        	document.getElementById(field).className = "form-control";
+            document.getElementById(compare).className = "form-control";
             } else {
-            document.getElementById(registration).className += " falseInput";
-            document.getElementById(repeatRegistration).className += " falseInput";
+            document.getElementById(field).className += " falseInput";
             }
     }
