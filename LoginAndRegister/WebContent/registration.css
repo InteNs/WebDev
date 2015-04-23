@@ -3,9 +3,13 @@
  border-color: red;
 }
 body {
-	background-image: url("http://bigbackground.com/wp-content/uploads/2013/07/car-background-audi-600x450.jpg") no-repeat center center fixed;
-	-webkit-background-size: cover;
+        background: url("background.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
-    background-size: cover; 
-}
+        background-size: cover; 
+      }
+.jumbotron {
+        margin-top: 50px;
+        background-color: rgba(238,238,238,0.8);
+      }

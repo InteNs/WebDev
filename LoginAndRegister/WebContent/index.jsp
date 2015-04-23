@@ -26,7 +26,7 @@
 			<div class="row">
 				<div class="col-md-4"></div>
 				<div class="col-md-4"
-					style="background-color: #FFF; border: 1px solid #0099CC; border-opacity: 0.2; border-radius: 8px; padding: 15px 15px 15px 15px;">
+					style="background-color: rgba(238,238,238,0.5); border: 1px solid #0099CC; border-opacity: 0.2; border-radius: 8px; padding: 15px 15px 15px 15px;">
 					<h1 style="text-align: center; color: #0099CC; margin-bottom: 20px; font-size:32px;">AutoTotaalDienst</h1>
 					<!-- Inloggen -->
 					<p>Aanmelden:</p>
@@ -83,64 +83,84 @@
 		aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content"
-				style="border: 1px solid #0099CC; border-radius: 8px;">
+				style="border: 1px solid #0099CC; border-radius: 8px; background-color: rgba(238,238,238,0.8);">
 
 
 				<div class="modal-body">
 					<h4 class="modal-title">Registratie</h4>
 					<form action="RegisterServlet.do" method="post">
-
+						<div class="row">
+							<div class="col-md-6">
 							<div class="form-group">
 								<label for="emailreg">Emailadres</label> <input type="email"
-									name="emailreg" onblur='compareInput("emailreg", "emailrep")'
+									name="emailreg" onblur='compareInput("emailreg", "emailrep");' 
 									class="form-control" id="emailreg" placeholder="Vul email in">
+                  <span id="emailRegErr"></span>
 							</div>
 							<div class="form-group">
 								<label for="emailrep">Herhaal emailadres</label> <input
 									type="email" name="emailrep"
-									onblur='compareInput("emailrep", "emailreg")' class="form-control"
+									class="form-control" onblur='compareInput("emailrep", "emailreg");' 
 									id="emailrep" placeholder="Herhaal email">
+                  <span id="emailRepErr"></span>
 							</div>
 							<div class="form-group">
 								<label for="passwordreg">Wachtwoord</label> <input
-									type="password" name="passwordreg"
-									onblur='compareInput("passwordreg", "passwordrep")'
+									type="password" name="passwordreg" onblur='compareInput("passwordreg", "passwordrep");' 
 									class="form-control" id="passwordreg"
 									placeholder="Vul wachtwoord in">
+                  <span id="passwordRegErr"></span>
 							</div>
 							<div class="form-group">
 								<label for="passwordrep">Herhaal wachtwoord</label> <input
-									type="password" name="passwordrep"
-									onblur='compareInput("passwordrep", "passwordreg")'
+									type="password" name="passwordrep" onblur='compareInput("passwordrep", "passwordreg");'
 									class="form-control" id="passwordrep"
 									placeholder="Herhaal wachtwoord">
+                  <span id="passwordRepErr"></span>
 							</div>
+						</div>
+
+						<div class="col-md-6">
 							<div class="form-group">
 								<label for="surname">Voornaam</label> <input type="text"
 									name="surname" class="form-control" id="surname"
 									placeholder="Vul voornaam in">
+                  <span id="surnameErr"></span>
 							</div>
 							<div class="form-group">
 								<label for="lastname">Achternaam</label> <input type="text"
 									name="lastname" class="form-control" id="lastname"
 									placeholder="Vul achternaam in">
+                  <span id="lastmnameErr"></span>
 							</div>
 							<div class="form-group">
 								<label for="address">Adres</label> <input type="text"
 									name="address" class="form-control" id="address"
 									placeholder="Vul adres in">
+                  <span id="addressErr"></span>
 							</div>
 							<div class="form-group">
 								<label for="country">Land</label> <input type="text"
 									name="country" class="form-control" id="country"
 									placeholder="Vul land in">
+                  <span id="countryErr"></span>
 							</div>
+						</div>
+						<div class="row" style="margin-left:16px;">
 						<div class="btn-toolbar" role="toolbar" aria-label="label">
 						<button type="button" class="btn" data-dismiss="modal" style="border-color: #0099CC;background-color: #FFF;  color: #626262;">Annuleren</button>
-						<button type="submit" class="btn"
-								style="background-color: #0099CC; color: #FFF;">Registreren</button>
+						<button type="submit" class="btn" value="submit request" 
+            onsubmit='
+              return validateInput("emailreg", "emailrep", "passwordreg", "passwordrep", "surname", "lastname", "address", "country");'
+								id="buttonReg" style="background-color: #0099CC; color: #FFF;">Registreren</button>
 						</div>
+					</div>
+
+					</div>
 					</form>
+
+
+
 				</div>
 			</div>
 			<!-- /.modal-content -->
