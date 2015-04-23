@@ -1,6 +1,10 @@
 package model;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 	private String email,password,firstName,surName,address,country;
 	private UserRole userRole;
 	public User(UserRole userRole,String email, String password, String firstName,

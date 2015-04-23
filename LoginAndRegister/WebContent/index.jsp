@@ -117,7 +117,7 @@
 							</div>
 							<div class="form-group">
 								<label for="surname">Voornaam</label> <input type="text"
-									name="name" class="form-control" id="surname"
+									name="surname" class="form-control" id="surname"
 									placeholder="Vul voornaam in">
 							</div>
 							<div class="form-group">
